@@ -23,7 +23,15 @@ public final class Main {
     apples.add(myApple4);
     apples.add(myApple5);
 
-    /** Here we select the corresponding strategy to execute. */
+    /**
+     * Concrete classes example (SITUATIONAL).
+     *
+     * <p>Here we select the corresponding strategy to execute. Below two lines require a lot of pre
+     * work to be done beforehand, as we need to declare and implement our concrete strategies to
+     * execute somewhere else first. This may work IF we need to share these strategies somewhere
+     * else in our code. However, usually we need to use the specific implementations only under
+     * specific conditions and hence, this is a lot of overhead for simple and common use cases.
+     */
     // prettyPrintApples(apples, new SimplePrintStrategy());
     // prettyPrintApples(apples, new PrettyPrintStrategy());
 
@@ -36,13 +44,25 @@ public final class Main {
      * code body to understand what it does; and even worse, variable scoping may get tricky to get
      * right.
      */
+    // prettyPrintApples(
+    //     apples,
+    //     new PrintStrategy() {
+    //       public void print(Apple a) {
+    //         System.out.println("Adhoc anonymous class strategy. Oh! yes, my apple: " + a);
+    //       }
+    //     });
+
+    /**
+     * Lambdas example (RECOMMENDED).
+     *
+     * <p>The cleanest and simple solution for common use cases is to use Java 8 lambdas to declare
+     * and implement adhoc behavior strategies; as the syntax is concise and readable al scoped
+     * within functions which make it harder to mess with shared state.
+     */
     prettyPrintApples(
         apples,
-        new PrintStrategy() {
-          public void print(Apple a) {
-            System.out.println("Adhoc anonymous class strategy. Oh! yes, my apple: " + a);
-          }
-        });
+        (Apple a) ->
+            System.out.println("Look at me ma', I'm using lambdas! and here is my apple: " + a));
   }
 
   static void prettyPrintApples(List<Apple> apples, PrintStrategy ps) {
