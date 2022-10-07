@@ -23,9 +23,16 @@ public final class Main {
     apples.add(myApple4);
     apples.add(myApple5);
 
+    // Here we select the corresponding strategy to execute.
     // final PrintStrategy ps = new SimplePrintStrategy();
     final PrintStrategy ps = new PrettyPrintStrategy();
-    Apples.prettyPrintApple(apples, ps);
+    prettyPrintApples(apples, ps);
+  }
+
+  static void prettyPrintApples(List<Apple> apples, PrintStrategy ps) {
+    for (Apple apple : apples) {
+      ps.print(apple);
+    }
   }
 }
 
@@ -35,25 +42,15 @@ interface PrintStrategy {
 }
 
 class SimplePrintStrategy implements PrintStrategy {
-  public void print(Apple e) {
-    System.out.println(e);
+  public void print(Apple a) {
+    System.out.println(a);
   }
 }
 
 class PrettyPrintStrategy implements PrintStrategy {
-  public void print(Apple e) {
+  public void print(Apple a) {
     System.out.println(String.format("Pretty Apple:"));
-    System.out.println(String.format("\tColor:%s", e.color));
-    System.out.println(String.format("\tWeight:%s", e.weight));
-  }
-}
-
-final class Apples {
-  private Apples() {}
-
-  public static void prettyPrintApple(List<Apple> apples, PrintStrategy ps) {
-    for (Apple apple : apples) {
-      ps.print(apple);
-    }
+    System.out.println(String.format("\tColor:%s", a.color));
+    System.out.println(String.format("\tWeight:%s", a.weight));
   }
 }
