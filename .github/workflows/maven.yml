@@ -16,12 +16,8 @@ on:
 
 jobs:
   build:
-    permissions:
-      id-token: write
-      contents: read
-      issues: write
-      pull-requests: write
-
+    permissions: write-all
+      
     runs-on: ubuntu-latest
 
     steps:
