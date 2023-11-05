@@ -1,4 +1,4 @@
-package behaviorparams;
+package com.rmachuca.behaviorparams;
 
 import java.util.ArrayList;
 import java.util.List;

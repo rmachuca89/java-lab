@@ -1,4 +1,4 @@
-package streams;
+package com.rmachuca.streams;
 
 public class Trader{
   private final String name;

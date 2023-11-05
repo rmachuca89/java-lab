@@ -1,4 +1,4 @@
-package behaviorparams;
+package com.rmachuca.behaviorparams;
 /** Apple bean. */
 public class Apple {
 

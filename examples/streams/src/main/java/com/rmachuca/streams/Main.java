@@ -1,4 +1,4 @@
-package streams;
+package com.rmachuca.streams;
 
 import static java.util.Comparator.comparing;
 

@@ -1,4 +1,4 @@
-package generics;
+package examples.generics.src.main.java.com.generics;
 
 class Foo {
     public Foo() {
