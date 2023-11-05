@@ -1,3 +1,4 @@
+package examples.helloworld.src.main.java.com.rmachuca.helloworld;
 /**
  * hello
  */

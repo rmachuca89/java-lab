@@ -1,3 +1,4 @@
+package examples.helloworld.src.main.java.com.rmachuca.helloworld;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 

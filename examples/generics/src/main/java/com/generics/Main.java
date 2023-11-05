@@ -1,9 +1,9 @@
-package generics;
+package examples.generics.src.main.java.com.generics;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
-public final class GenericsExampleMain {
+public final class Main {
     public static void main(String[] args) {
 
         MyGenericClass<String> myString = new MyGenericClass<>("String Generic");
@@ -14,5 +14,5 @@ public final class GenericsExampleMain {
         MyGenericClass<Foo> myFoo = new MyGenericClass<>(new Foo());
     }
 
-    private GenericsExampleMain(){}
+    private Main(){}
 }
